@@ -1,7 +1,8 @@
+An API that connects to an Event Store build with Cassandra. Enables downloading a daily CSV with all the events.
 
+## API Documentation
 
-@TODO: Add Swagger Docs:
- - https://g00glen00b.be/generating-static-documentation-swagger/
+- http://localhost:8080/swagger-ui.html
 
 @TODO: Add date validation in endpoint.
 

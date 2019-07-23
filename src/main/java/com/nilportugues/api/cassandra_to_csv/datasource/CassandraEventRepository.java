@@ -1,6 +1,6 @@
-package com.example.cassandratocsv.datasource;
+package com.nilportugues.api.cassandra_to_csv.datasource;
 
-import com.example.cassandratocsv.domain.EventRepository;
+import com.nilportugues.api.cassandra_to_csv.domain.EventRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository

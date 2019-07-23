@@ -1,4 +1,4 @@
-package com.example.cassandratocsv;
+package com.nilportugues.api.cassandra_to_csv;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

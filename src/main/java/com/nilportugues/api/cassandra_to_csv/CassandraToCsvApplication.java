@@ -1,31 +1,21 @@
-package com.example.cassandratocsv;
+package com.nilportugues.api.cassandra_to_csv;
 
-import com.example.cassandratocsv.domain.Event;
-import com.example.cassandratocsv.domain.EventPrimaryKey;
-import com.example.cassandratocsv.domain.EventRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
-import java.time.LocalDate;
-import java.util.Date;
-import java.util.UUID;
-import java.util.concurrent.CompletableFuture;
-import javax.annotation.PostConstruct;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableAutoConfiguration
-@ComponentScan(basePackages = "com.example.cassandratocsv.*")
+@EnableSwagger2
+@ComponentScan
 public class CassandraToCsvApplication {
 
-	@Autowired
-	private EventRepository eventRepository;
-
-	public static void main(String[] args) {
-		SpringApplication.run(CassandraToCsvApplication.class, args);
-	}
-
+    public static void main(String[] args) {
+        SpringApplication.run(CassandraToCsvApplication.class, args);
+    }
+/*
 	@PostConstruct
 	public void doSomeInserts() {
 
@@ -46,4 +36,5 @@ public class CassandraToCsvApplication {
 
 
 	}
+*/
 }
