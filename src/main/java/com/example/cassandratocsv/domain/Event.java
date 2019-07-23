@@ -1,4 +1,4 @@
-package com.example.cassandratos3.domain;
+package com.example.cassandratocsv.domain;
 
 import org.springframework.data.cassandra.core.mapping.Column;
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;

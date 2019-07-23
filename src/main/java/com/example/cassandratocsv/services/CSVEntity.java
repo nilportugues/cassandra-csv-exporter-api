@@ -1,4 +1,4 @@
-package com.example.cassandratos3.services;
+package com.example.cassandratocsv.services;
 
 import java.io.Serializable;
 

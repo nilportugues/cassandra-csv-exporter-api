@@ -1,8 +1,8 @@
-package com.example.cassandratos3;
+package com.example.cassandratocsv;
 
-import com.example.cassandratos3.domain.Event;
-import com.example.cassandratos3.domain.EventPrimaryKey;
-import com.example.cassandratos3.domain.EventRepository;
+import com.example.cassandratocsv.domain.Event;
+import com.example.cassandratocsv.domain.EventPrimaryKey;
+import com.example.cassandratocsv.domain.EventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -16,14 +16,14 @@ import javax.annotation.PostConstruct;
 
 @SpringBootApplication
 @EnableAutoConfiguration
-@ComponentScan(basePackages = "com.example.cassandratos3.*")
-public class CassandraToS3Application {
+@ComponentScan(basePackages = "com.example.cassandratocsv.*")
+public class CassandraToCsvApplication {
 
 	@Autowired
 	private EventRepository eventRepository;
 
 	public static void main(String[] args) {
-		SpringApplication.run(CassandraToS3Application.class, args);
+		SpringApplication.run(CassandraToCsvApplication.class, args);
 	}
 
 	@PostConstruct

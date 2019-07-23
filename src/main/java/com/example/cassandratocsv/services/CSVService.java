@@ -1,7 +1,6 @@
-package com.example.cassandratos3.services;
+package com.example.cassandratocsv.services;
 
-import com.example.cassandratos3.domain.Event;
-import com.fasterxml.jackson.core.JsonProcessingException;
+import com.example.cassandratocsv.domain.Event;
 import com.fasterxml.jackson.dataformat.csv.CsvMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvSchema;
 import org.springframework.stereotype.Service;

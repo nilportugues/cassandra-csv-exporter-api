@@ -1,6 +1,6 @@
-package com.example.cassandratos3.datasource;
+package com.example.cassandratocsv.datasource;
 
-import com.example.cassandratos3.domain.EventRepository;
+import com.example.cassandratocsv.domain.EventRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository

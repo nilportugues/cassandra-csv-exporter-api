@@ -1,4 +1,4 @@
-package com.example.cassandratos3.domain;
+package com.example.cassandratocsv.domain;
 
 import org.springframework.data.cassandra.repository.CassandraRepository;
 import org.springframework.data.cassandra.repository.Query;

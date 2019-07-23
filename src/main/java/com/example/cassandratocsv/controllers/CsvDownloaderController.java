@@ -1,10 +1,8 @@
-package com.example.cassandratos3.controllers;
+package com.example.cassandratocsv.controllers;
 
-import com.example.cassandratos3.domain.Event;
-import com.example.cassandratos3.domain.EventRepository;
-import com.example.cassandratos3.services.CSVService;
+import com.example.cassandratocsv.domain.EventRepository;
+import com.example.cassandratocsv.services.CSVService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ByteArrayResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -16,12 +14,7 @@ import org.springframework.web.servlet.mvc.method.annotation.StreamingResponseBo
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.BufferedOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
 import java.time.LocalDate;
-import java.util.concurrent.CompletableFuture;
-import java.util.stream.Stream;
 
 @RestController
 public class CsvDownloaderController {
