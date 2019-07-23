@@ -16,8 +16,8 @@ public class OpenAPIConfiguration {
     @Bean
     public Docket docket() {
         ApiInfo apiInfo = new ApiInfoBuilder()
-                .title("Event Store CSV Downloader")
-                .description("An API that connects to an Event Store build with Cassandra and enables downloading a daily CSV with all the events.")
+                .title("Cassandra CSV Exporter API")
+                .description("An API that connects to Apache Cassandra and enables downloading a daily CSV with all the events.")
                 .version("1.0.0")
                 .termsOfServiceUrl("")
                 .license("")

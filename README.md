@@ -1,5 +1,8 @@
+# Apache Cassandra CSV Exporter API
+
 - @TODO: Add date validation in endpoint.
 - @TODO: Change CSV lib for https://github.com/osiegmar/FastCSV
+- @TODO: application.yml instead of hard-coded credentials for cassandra.
 
 ## API Documentation
 
