@@ -8,9 +8,7 @@
 ## 1. Table Structure 
 
 ```sql
-CREATE KEYSPACE event_store
-WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 3}
-AND durable_writes='true';
+CREATE KEYSPACE event_store WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 3} AND durable_writes='true';
 
 
 CREATE TABLE events (

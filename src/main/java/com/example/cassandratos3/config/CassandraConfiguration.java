@@ -17,7 +17,7 @@ public class CassandraConfiguration extends AbstractCassandraConfiguration {
 
   @Override
   protected String getKeyspaceName() {
-    return "testKeySpace";
+    return "event_store";
   }
   @Override
   protected List<CreateKeyspaceSpecification> getKeyspaceCreations() {

@@ -12,6 +12,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.mvc.method.annotation.StreamingResponseBody;
+
+import javax.servlet.http.HttpServletResponse;
+import java.io.BufferedOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.time.LocalDate;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Stream;
@@ -26,27 +33,43 @@ public class CsvDownloaderController {
   private CSVService csvService;
 
   @RequestMapping(value = "/download/events/{date}", method = RequestMethod.GET)
-  public CompletableFuture<ResponseEntity> all(@PathVariable String date) {
+  public ResponseEntity<StreamingResponseBody> all(@PathVariable String date, final HttpServletResponse response) {
+
+    HttpHeaders headers = new HttpHeaders();
+    headers.add("Cache-Control", "no-cache, no-store, must-revalidate");
+    headers.add("Pragma", "no-cache");
+    headers.add("Expires", "0");
+    headers.add("Content-disposition", "attachment;filename=events."+date+".csv");
+
     try {
-      return CompletableFuture.supplyAsync(() -> {
 
-        Stream<Event> stream = eventRepository.findByEventPrimaryKey_Day(LocalDate.parse(date));
-        String csv = csvService.build(stream);
-        ByteArrayResource resource = new ByteArrayResource(csv.getBytes());
+        //String csv = csvService.build(eventStream);
+        //ByteArrayResource resource = new ByteArrayResource(csv.getBytes());
 
-        HttpHeaders headers = new HttpHeaders();
-        headers.add("Cache-Control", "no-cache, no-store, must-revalidate");
-        headers.add("Pragma", "no-cache");
-        headers.add("Expires", "0");
-        headers.add("Content-disposition", "attachment;filename=events."+date+".csv");
+        StreamingResponseBody stream = out -> {
+
+          BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(response.getOutputStream());
+
+          eventRepository
+                  .findByEventPrimaryKey_Day(LocalDate.parse(date))
+                  .map(v -> csvService.build(v))
+                  .forEachOrdered(v -> {
+                    try {
+                      bufferedOutputStream.write(v.getBytes(), 0, v.length());
+                    } catch (Throwable ignored) {
+
+                    }
+                  });
+                  bufferedOutputStream.close();
+        };
 
         return ResponseEntity.ok()
             .headers(headers)
             .contentType(MediaType.parseMediaType("text/csv"))
-            .body(resource);
-      });
+            .body(stream);
+
     } catch (Throwable e) {
-      return CompletableFuture.completedFuture(ResponseEntity.badRequest().build());
+      return ResponseEntity.badRequest().body(null);
     }
   }
 }
