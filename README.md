@@ -1,10 +1,12 @@
-An API that connects to an Event Store build with Cassandra. Enables downloading a daily CSV with all the events.
+@TODO: Add date validation in endpoint.
+@TODO: Change CSV lib for https://github.com/osiegmar/FastCSV
 
 ## API Documentation
 
+An API that connects to an Event Store build with Cassandra. Enables downloading a daily CSV with all the events.
+
 - http://localhost:8080/swagger-ui.html
 
-@TODO: Add date validation in endpoint.
 
 ## 1. Table Structure 
 
