@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  cassandra:
+    container_name: cassandra
+    image: bitnami/cassandra:3.11.4
+    volumes:
+      - ./_data/cassandra:/bitnami
+    ports:
+      - 9042:9042
+    environment:
+      CASSANDRA_TRANSPORT_PORT_NUMBER: 7000
+      CASSANDRA_JMX_PORT_NUMBER: 7199
+      CASSANDRA_CQL_PORT_NUMBER: 9042
+      CASSANDRA_USER: cassandra
+      CASSANDRA_PASSWORD_SEEDER: "no"
+      CASSANDRA_PASSWORD: cassandra
+      CASSANDRA_NUM_TOKENS: 256
+      CASSANDRA_HOST: null
+      CASSANDRA_CLUSTER_NAME: "My Cluster"
+      CASSANDRA_SEEDS: null
+      CASSANDRA_ENDPOINT_SNITCH: "SimpleSnitch"
+      CASSANDRA_ENABLE_RPC: "true"
+      CASSANDRA_DATACENTER: "dc1"
+      CASSANDRA_RACK: "rack1"
