@@ -1,5 +1,5 @@
-@TODO: Add date validation in endpoint.
-@TODO: Change CSV lib for https://github.com/osiegmar/FastCSV
+- @TODO: Add date validation in endpoint.
+- @TODO: Change CSV lib for https://github.com/osiegmar/FastCSV
 
 ## API Documentation
 
