@@ -28,7 +28,7 @@ public class CassandraToS3Application {
 
 	@PostConstruct
 	public void doSomeInserts() {
-
+/*
 		CompletableFuture.runAsync(() -> {
 			for(int i = 0; i<10000000; i++) {
 				eventRepository.save(new Event(
@@ -43,7 +43,7 @@ public class CassandraToS3Application {
 				));
 			}
 		});
-
+*/
 
 	}
 }
