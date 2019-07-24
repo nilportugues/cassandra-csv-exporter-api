@@ -5,7 +5,7 @@
     -> Kafka
        -> [Streaming to Cassandra] 
            -> Cassandra 
-               |-> [Kafka to Cassandra] 
+               |-> [Save to Cassandra] 
                |-> [Export to CSV]      --> DataStore -> Apache Spark. (This project).
                |-> [Direct Query]       ---------------> Apache Spark. 
 ```
