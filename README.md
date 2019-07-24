@@ -1,4 +1,10 @@
-Big Picture: 
+# Apache Cassandra CSV Exporter API
+
+- @TODO: Add date validation in endpoint.
+- @TODO: Change CSV lib for https://github.com/osiegmar/FastCSV
+- @TODO: application.yml instead of hard-coded credentials for cassandra.
+
+## Big Picture: 
 
 ```
 [Events] 
@@ -12,18 +18,15 @@ Big Picture:
 
 ----
 
-# Apache Cassandra CSV Exporter API
-
-- @TODO: Add date validation in endpoint.
-- @TODO: Change CSV lib for https://github.com/osiegmar/FastCSV
-- @TODO: application.yml instead of hard-coded credentials for cassandra.
-
 ## API Documentation
 
 An API that connects to an Event Store build with Cassandra. Enables downloading a daily CSV with all the events.
 
 - http://localhost:8080/swagger-ui.html
 
+------
+
+# Apache Cassandra Setup
 
 ## 1. Table Structure 
 
