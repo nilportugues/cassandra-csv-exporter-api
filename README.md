@@ -5,8 +5,9 @@ Big Picture:
     -> Kafka
        -> [Streaming to Cassandra] 
            -> Cassandra 
-               |-> [Export to CSV] -> DataStore -> Apache Spark.
-               |-> [Direct Query]   -------------> Apache Spark. 
+               |-> [Kafka to Cassandra] 
+               |-> [Export to CSV]      --> DataStore -> Apache Spark. (This project).
+               |-> [Direct Query]       ---------------> Apache Spark. 
 ```
 
 ----
