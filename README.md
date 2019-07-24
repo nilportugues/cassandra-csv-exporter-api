@@ -1,3 +1,12 @@
+Big Picture: 
+
+```
+[Events] -> Kafka -> [Streaming to Cassandra] -> Cassandra -> [Export to CSV] -> DataStore -> Apache Spark.
+                                                           -> [Direct Query]  --------------> Apache Spark. 
+```
+
+----
+
 # Apache Cassandra CSV Exporter API
 
 - @TODO: Add date validation in endpoint.
